@@ -1,0 +1,204 @@
+/* SecPrecentation.css */
+.carousel-image {
+  position: relative; /* Necesario para que el z-index del navbar funcione */
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1; /* Fondo semi-transparente por debajo del navbar */
+}
+
+.slick-slide {
+  transition: transform 1s ease-in-out; /* Transición para el zoom en el contenedor */
+}
+
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.section h1 {
+  font-size: 3rem; /* Ajusta este valor según tus necesidades */
+}
+
+.section p {
+  font-size: 1rem; /* Ajusta este valor según tus necesidades */
+  font-family: 'Arial', sans-serif; /* Cambia la fuente a Arial o la que prefieras */
+}
+
+.text-container {
+  position: relative;
+  z-index: 2; /* Asegura que el texto esté por encima del fondo */
+}
+
+.min-vh-100 {
+  min-height: 100vh;
+}
+.custom-container {
+  position: relative;
+  z-index: 10;
+}
+
+/* Estilos para el Navbar */
+.navbar-container {
+  position: absolute; /* Posición absoluta para estar sobre otros elementos */
+  top: 0; /* Alineado en la parte superior */
+  left: 0; /* Alineado a la izquierda */
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  z-index: 1000; /* Asegura que esté encima de otros elementos */
+  padding: 10px; /* Espaciado para asegurar que no esté pegado al borde */
+}
+
+.custom-navbar-toggle .navbar-toggler-icon {
+  color: white; /* Cambia el color de las líneas del menú hamburguesa */
+}
+
+.navbar-toggler-icon {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-list" viewBox="0 0 16 16"><path d="M1 3.5A.5.5 0 0 1 1.5 3h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM1 8a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM1 12.5A.5.5 0 0 1 1.5 12h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z"/></svg>');
+}
+
+.custom-dropdown-toggle {
+  width: 95%; /* Ajusta el ancho según sea necesario */
+}
+
+/* SecRendimiento.css */
+
+.custom-container2 {
+  position: relative;
+  z-index: 10;
+  overflow: hidden; /* Asegura que los elementos no se salgan del contenedor */
+  transition: height 0.5s ease-in-out;
+}
+
+.custom-margin-top {
+  margin-top: 10px; /* Ajusta este valor para acercar los acordeones hacia arriba */
+}
+
+.custom-margin-bottom {
+  margin-bottom: 70px; /* Ajusta este valor para separar el cuarto acordeón hacia abajo */
+}
+
+.accordion-item {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Añadir transición para transform */
+}
+
+.fondo{
+  background: url('../../../assets/mon.jpg');
+  background-size: cover;
+  min-height: 45vh; /* Asegura que el fondo cubra al menos el 100% del alto de la ventana */
+
+}
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ajusta los valores según tu preferencia */
+}
+
+/* SecGoals.css */
+
+.sec-goals {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Asegúrate de que ocupa toda la altura de la pantalla */
+  background: url('../../../assets/campo.jpg') no-repeat center center;
+  background-size: cover;
+  overflow: visible; /* Visible por defecto */
+}
+
+.sec-goals-content {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  text-align: center;
+}
+
+.sec-goals::before {
+  content: '';
+  position: absolute;
+  top: 50%; /* Empieza desde la mitad de la imagen */
+  left: 0;
+  width: 100%;
+  height: 50%; /* Ajusta para cubrir la parte inferior */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #EEEDEB 100%);
+  z-index: 0;
+}
+
+.fondo-card {
+  background: url('../../../assets/monedas.jpg') no-repeat center center;
+  background-size: cover;
+  color: #fff;
+}
+
+/* Aplicar overflow: hidden solo en pantallas pequeñas */
+@media (max-width: 767px) {
+  .sec-goals {
+    overflow: hidden; /* Solo en pantallas pequeñas */
+  }
+}
+
+/* SecFaq.css */
+.custom-accordion-item .custom-accordion-header {
+  background-color: #ffc107 !important; /* Color de fondo warning */
+  color: #212529 !important; /* Texto oscuro */
+}
+
+.custom-accordion-item .custom-accordion-header:hover {
+  background-color: #e0a800 !important; /* Color de fondo warning más oscuro para hover */
+}
+
+.custom-accordion-item {
+  border: 1px solid #ffc107; /* Borde color warning */
+}
+
+.custom-accordion-body {
+  background-color: #fff3cd; /* Color de fondo del cuerpo acordeón */
+  color: #856404; /* Color de texto */
+}
+
+
+/* SecNews.css */
+
+.sec-News {
+  position: relative;
+  background: url('../../../assets/mon.jpg') no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh; /* Ocupa al menos la altura de la pantalla */
+  overflow: hidden;
+  padding-bottom: 2rem; /* Espacio adicional en la parte inferior */
+}
+
+.sec-News .card {
+  margin-bottom: 1.5rem; /* Añade un margen inferior a las tarjetas */
+}
+
+.sec-News .card-img-top {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  .sec-News .card {
+    margin-bottom: 1rem; /* Ajusta el margen inferior para pantallas pequeñas */
+  }
+}
+
+
+
+
+
+
+
+
+

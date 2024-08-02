@@ -1,0 +1,52 @@
+@font-face {
+  font-family: 'JosefinSans';
+  src: url('../fonts/JosefinSans-MediumItalic.ttf') format('truetype'); /* Ruta a tu archivo de fuente */
+}
+
+body {
+  min-height: 100vh;
+  /* background: linear-gradient(to right, #070F2B, #001C30);  Gradiente de fondo */
+  background: #EEEDEB;
+ /* background: linear-gradient(to right, #EEEDEB, #F5F7F8); /* Gradiente de fondo */
+  margin: 0;
+  padding: 0; /* Eliminamos el padding para evitar márgenes adicionales */
+  box-sizing: border-box;
+  font-family: 'JosefinSans', sans-serif;  
+  overflow-x: hidden;
+}
+
+.main-container {
+  border: 2px solid #ffc107; /* Color del borde */
+  border-radius: 10px; /* Bordes redondeados */
+  margin: 10px; /* Espaciado interno */
+   
+ 
+}
+
+#container-login {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.bg-intro{
+  background: url('../assets/shad.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.modal-header .btn-close {
+  filter: invert(1);
+}
+
+
+
+ 
+
+  
+  
+ 
+  
+  
+
+  
+  
