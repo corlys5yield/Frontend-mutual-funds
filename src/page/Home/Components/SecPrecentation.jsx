@@ -3,9 +3,9 @@ import Slider from 'react-slick';
 import { Container, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { gsap } from 'gsap';
-import ilus from '../../../assets/cresi2.jpg';
-import ilus2 from '../../../assets/equipo.jpg';
-import ilus3 from '../../../assets/lago.jpg';
+import ilus from '../../../assets/cos1.jpg';
+import ilus2 from '../../../assets/cos2.jpg';
+import ilus3 from '../../../assets/cos3.jpg';
 import '../HomeCss/Home.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -49,7 +49,6 @@ export const SecPrecentation = ({ handleShowModal }) => {
 
   const handleBeforeChange = () => {
     textRefs.current.forEach((element, index) => {
-      const animationType = index < 2 ? animations.fadeRight : animations.fadeUp;
       gsap.to(element, {
         opacity: 0,
         x: index === 2 ? -50 : index < 2 ? 50 : 0,

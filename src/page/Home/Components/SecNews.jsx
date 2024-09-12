@@ -5,7 +5,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import refer from '../../../assets/refer.jpg';
 import promos from '../../../assets/promo.jpg';
 import fondos from '../../../assets/nuefon.webp';
-
 import '../HomeCss/Home.css';
 
 gsap.registerPlugin(ScrollTrigger);

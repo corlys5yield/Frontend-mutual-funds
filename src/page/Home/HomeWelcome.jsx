@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Container, Button, Modal } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Logo from '../../assets/FondoComunIcon.png';
@@ -12,12 +11,12 @@ import { SecFaq } from './Components/SecFaq';
 import MainNavbar from '../../components/MainNavbar';
 import { FormLogin } from './Components/FormLogin';
 import { FormRegister } from './Components/FormRegister';
+import SecAboutUs from './Components/SecAboutUs';
 
 
 gsap.registerPlugin(ScrollTrigger);
 
 export const HomeWelcome = () => {
-  const navigate = useNavigate();
   const sectionsRef = useRef([]);
   const [scrolling, setScrolling] = useState(false);
   const [showModalL, setShowModalL] = useState(false);//modal login
@@ -43,13 +42,13 @@ export const HomeWelcome = () => {
       );
     });
 
-    gsap.fromTo('.background-image', 
-      { opacity: 0 }, 
+    gsap.fromTo('.background-image',
+      { opacity: 0 },
       { opacity: 1, duration: 2 }
     );
-    
-    gsap.fromTo('.overlay-image', 
-      { x: '100%', opacity: 0 }, 
+
+    gsap.fromTo('.overlay-image',
+      { x: '100%', opacity: 0 },
       { x: '0%', opacity: 1, duration: 2, delay: 1 }
     );
 
@@ -80,29 +79,41 @@ export const HomeWelcome = () => {
 
   return (
     <div className="d-flex flex-column min-vh-100">
-      
-      <div ref={el => (sectionsRef.current[1] = el)}>
-      <div className="navbar-container text-white">
-        <MainNavbar  handleShowModal={handleShowModal}/>
-        <hr></hr>
-      </div>
-        <SecPrecentation  handleShowModal={handleShowModal}/>
+
+      <div ref={el => (sectionsRef.current[0] = el)}>
+        <div className="navbar-container text-white">
+          <MainNavbar handleShowModal={handleShowModal} />
+          <hr></hr>
+        </div>
+        <SecPrecentation handleShowModal={handleShowModal} />
       </div>
 
-      <div id="rendimiento" ref={(el) => (sectionsRef.current[1] = el)} className="section text-white text-center py-5">
+      <div id="AboutUs" ref={(el) => (sectionsRef.current[1] = el)} className="section text-white text-center py-5">
+
         <Container>
-          <SecRendimiento />
+          <SecAboutUs />
         </Container>
+
+
       </div>
+
       <div id="goals" ref={(el) => (sectionsRef.current[2] = el)} className="section text-white text-center py-5">
         <SecGoals />
       </div>
-      <div id="faq" ref={(el) => (sectionsRef.current[3] = el)} className="section text-white text-center py-5">
+      <div id="rendimiento" ref={(el) => (sectionsRef.current[3] = el)} className="section text-white text-center py-5">
+
+        <Container>
+          <SecRendimiento />
+        </Container>
+
+
+      </div>
+      <div id="faq" ref={(el) => (sectionsRef.current[4] = el)} className="section text-white text-center py-5">
         <Container>
           <SecFaq />
         </Container>
       </div>
-      <div id="news" ref={(el) => (sectionsRef.current[4] = el)} className="section text-white text-center">
+      <div id="news" ref={(el) => (sectionsRef.current[5] = el)} className="section text-white text-center">
         <SecNews />
       </div>
       <Button
@@ -122,52 +133,63 @@ export const HomeWelcome = () => {
         className="shadow-lg"
       >
         <Modal.Header closeButton className="bg-dark border-warning">
-          
-            <div className="d-flex text-shadow justify-content-start ">
-              <img
-                src={Logo}
-                alt="Logo"
-                className="welcome-logo"
-                style={{ width: '200px' }}
-              />
-            </div>
-            <div className="d-flex justify-content-center ">
-              <h1 className="welcome-text text-shadow text-light">
-                <span className="text-warning text-shadow">5</span>yield
-              </h1>
-            </div>
-          
+
+          <div className="d-flex text-shadow justify-content-start ">
+            <img
+              src={Logo}
+              alt="Logo"
+              className="welcome-logo"
+              style={{ width: '200px' }}
+            />
+          </div>
+          <div className="d-flex justify-content-center ">
+            <h1 className="welcome-text text-shadow text-light">
+              <span className="text-warning text-shadow">5</span>yield
+            </h1>
+          </div>
+
         </Modal.Header>
         <Modal.Body className="bg-dark">
           <FormLogin />
         </Modal.Body>
         <Modal.Footer className="bg-dark justify-content-center border-0">
           <Button className="m-2 rounded-pill" variant="outline-light" onClick={handleShowModalR}>
-            Registrate aqui
+            Únete
           </Button>
         </Modal.Footer>
       </Modal>
 
-{/* Modal de Registro */}
-<Modal
+      {/* Modal de Registro */}
+      <Modal
         show={showModalR}
         onHide={handleCloseModalR}
         centered
         className="shadow-lg"
       >
-        <Modal.Header closeButton className="bg-dark border-0">
+        <Modal.Header closeButton className="bg-dark border-warning">
+
+          <div className="d-flex text-shadow justify-content-start ">
+            <img
+              src={Logo}
+              alt="Logo"
+              className="welcome-logo"
+              style={{ width: '200px' }}
+            />
+          </div>
           <div className="d-flex justify-content-center w-100">
             <h1 className="welcome-text text-light">
               Registro
             </h1>
           </div>
+
+
         </Modal.Header>
         <Modal.Body className="bg-dark">
-         
-        <FormRegister/>
+
+          <FormRegister handleCloseModalR={handleCloseModalR} />
 
         </Modal.Body>
-        
+
       </Modal>
 
     </div>

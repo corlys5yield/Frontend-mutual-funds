@@ -1,29 +1,28 @@
 import Swal from "sweetalert2";
-import authApi from '../../../api/authApi';
+import authApi from "../../../api/authApi";
 
-export const starRegister = async (email, userName, lastName, password) => {
+export const UpdateUs = async (_id,email, userName, lastName,rol, password, navigate) => {
     try {
-        const resp = await authApi.post('/auth/new', {
+        const resp = await authApi.put('/admin/updateUser', {
+            _id,
           email, 
           userName, 
-          lastName, 
+          lastName,
+          rol, 
           password,
         });
 
-        Swal.fire({
-            title: "se ah registrado con exito",
-            text: "ahora podra loguearse",
-            icon: "success",
+
+          Swal.fire({
+            title: 'Usuario actualizado',
+            text:  resp.data.msg,
+            icon: 'success',
             background: "#f9f9f9",
             confirmButtonColor: "#ffc107",
-            customClass: {
-              title: "swal2-title-custom",
-              content: "swal2-content-custom",
-              confirmButton: "swal2-confirm-custom",
-            },
-          });
+            confirmButtonText: 'Ok',
+        });
         
-        navigate("/*");
+        
 
     } catch (error) {
         console.log(error.response.data.msg);
@@ -41,6 +40,10 @@ export const starRegister = async (email, userName, lastName, password) => {
             confirmButton: "swal2-confirm-custom",
           },
         });
+        if (error.response.status === 401) {
+            localStorage.removeItem('token');
+            navigate('/login');
+        }
     }
 
 }

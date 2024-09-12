@@ -1,18 +1,18 @@
 import Swal from "sweetalert2";
 import authApi from '../../../api/authApi';
 
-export const starRegister = async (email, userName, lastName, password) => {
+export const activateUser = async (UserId) => {
     try {
-        const resp = await authApi.post('/auth/new', {
-          email, 
-          userName, 
-          lastName, 
-          password,
+        
+        const resp = await authApi.put('/admin/activateUs', {
+          _id:UserId 
         });
 
+        
+
         Swal.fire({
-            title: "se ah registrado con exito",
-            text: "ahora podra loguearse",
+            title: "Usuario Habilitado",
+            text: "se ah habilitado al usuario correctamente",
             icon: "success",
             background: "#f9f9f9",
             confirmButtonColor: "#ffc107",
@@ -23,11 +23,11 @@ export const starRegister = async (email, userName, lastName, password) => {
             },
           });
         
-        navigate("/*");
+          //setNewTrans(true)
 
     } catch (error) {
         console.log(error.response.data.msg);
-        const errorMessage = error.response?.data?.msg || 'Error en el login';
+        const errorMessage = error.response?.data?.msg || 'Error';
     
         Swal.fire({
           title: "ERROR",
@@ -41,6 +41,12 @@ export const starRegister = async (email, userName, lastName, password) => {
             confirmButton: "swal2-confirm-custom",
           },
         });
+
+        if (error.response?.status === 401) {
+          localStorage.removeItem('token');
+          navigate('/login');
+      }
+  
     }
 
 }

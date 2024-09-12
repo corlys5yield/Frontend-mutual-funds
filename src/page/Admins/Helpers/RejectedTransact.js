@@ -1,18 +1,18 @@
 import Swal from "sweetalert2";
 import authApi from '../../../api/authApi';
 
-export const starRegister = async (email, userName, lastName, password) => {
+export const rejectedTransaction = async (setNewTrans,TransId) => {
     try {
-        const resp = await authApi.post('/auth/new', {
-          email, 
-          userName, 
-          lastName, 
-          password,
+        console.log(TransId)
+        const resp = await authApi.put('/transactions/trans-reject', {
+          _id:TransId 
         });
 
+        
+
         Swal.fire({
-            title: "se ah registrado con exito",
-            text: "ahora podra loguearse",
+            title: "Se ah rechazado la transaccion",
+            text: "La solicitud fue rechazada",
             icon: "success",
             background: "#f9f9f9",
             confirmButtonColor: "#ffc107",
@@ -23,7 +23,7 @@ export const starRegister = async (email, userName, lastName, password) => {
             },
           });
         
-        navigate("/*");
+          setNewTrans(true)
 
     } catch (error) {
         console.log(error.response.data.msg);
@@ -41,6 +41,11 @@ export const starRegister = async (email, userName, lastName, password) => {
             confirmButton: "swal2-confirm-custom",
           },
         });
+        if (error.response?.status === 401) {
+          localStorage.removeItem('token');
+          navigate('/login');
+      }
+  
     }
 
 }

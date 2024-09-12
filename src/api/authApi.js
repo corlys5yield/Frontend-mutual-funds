@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const authApi=axios.create({
 	baseURL: "https://backend-mutual-funds.onrender.com",//en produccion 
-    //serverURL: "http://localhost:4007",
+    //baseURL: "http://localhost:4007",
 	//serverURL: "aqui va el de render o donde se deploye el back",    
 });
 

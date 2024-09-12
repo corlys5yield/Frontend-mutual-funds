@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import { Container, Card } from 'react-bootstrap';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
 import '../HomeCss/Home.css';
 
 gsap.registerPlugin(ScrollTrigger);

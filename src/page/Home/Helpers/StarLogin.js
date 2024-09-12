@@ -1,18 +1,34 @@
 import Swal from "sweetalert2";
 import authApi from '../../../api/authApi';
 
-export const starLogin = async (userName, password, navigate) => {
+export const starLogin = async (email, password, navigate) => {
   try {
     const resp = await authApi.post('/auth/login', {
-      userName,
+      email,
       password,
     });
     localStorage.setItem('token', resp.data.token);
+    //console.log(resp.data.id)
 
     if (resp.data.rol === 'user') {
-      navigate('/inv', { state: resp.data.email });
+      navigate('/inv', { 
+        state: { 
+          email: resp.data.email, 
+          id: resp.data.id,
+          
+          
+        } 
+      });
     } else {
-      navigate("/admins", { state: resp.data.name });
+
+      navigate('/admins', { 
+        state: { 
+          email: resp.data.email, 
+          id: resp.data.id,
+          
+          
+        } 
+      });
     }
 
   } catch (error) {

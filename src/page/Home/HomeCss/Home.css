@@ -195,6 +195,18 @@
 }
 
 
+/* Estilo del checkbox cuando está seleccionado */
+.warning-checkbox .form-check-input:checked {
+  background-color: #ffc107; /* color warning */
+  border-color: #ffc107;
+}
+
+/* Estilo del checkbox antes de ser seleccionado */
+.warning-checkbox .form-check-input {
+  border-color: #ffc107; /* borde del checkbox */
+}
+
+
 
 
 

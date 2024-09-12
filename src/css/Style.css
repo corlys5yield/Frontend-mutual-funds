@@ -1,7 +1,4 @@
-@font-face {
-  font-family: 'JosefinSans';
-  src: url('../fonts/JosefinSans-MediumItalic.ttf') format('truetype'); /* Ruta a tu archivo de fuente */
-}
+
 
 body {
   min-height: 100vh;
@@ -38,6 +35,23 @@ body {
   filter: invert(1);
 }
 
+/*para el paginado*/
+.custom-pagination .page-item {
+    
+  color: var(--bs-light);
+}
+
+.custom-pagination .page-link {
+  background-color: var(--bs-dark);
+  border-color: var(--bs-light);
+  color: var(--bs-light);
+}
+
+.custom-pagination .page-item.active .page-link {
+  background-color: var(--bs-light);
+  color: var(--bs-dark);
+}
+/*////////////////*/
 
 
  

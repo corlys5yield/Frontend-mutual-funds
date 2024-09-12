@@ -1,18 +1,20 @@
 import Swal from "sweetalert2";
-import authApi from '../../../api/authApi';
+import authApi from "../../../api/authApi";
 
-export const starRegister = async (email, userName, lastName, password) => {
+
+export const starCreateFund = async (name, startDate, endDate, maxInvestors, minInvestmentAmount,setNewFund, navigate) => {
     try {
-        const resp = await authApi.post('/auth/new', {
-          email, 
-          userName, 
-          lastName, 
-          password,
+        const resp = await authApi.post('/funds/new-fund', {
+          name, 
+          startDate, 
+          endDate, 
+          maxInvestors,
+          minInvestmentAmount
         });
 
         Swal.fire({
-            title: "se ah registrado con exito",
-            text: "ahora podra loguearse",
+            title: "se ah creado un fondo con exito",
+            text: "ahora vera a las transacciones de los inversores que se sumaran al fondo",
             icon: "success",
             background: "#f9f9f9",
             confirmButtonColor: "#ffc107",
@@ -23,7 +25,7 @@ export const starRegister = async (email, userName, lastName, password) => {
             },
           });
         
-        navigate("/*");
+        setNewFund(true)
 
     } catch (error) {
         console.log(error.response.data.msg);
@@ -41,6 +43,12 @@ export const starRegister = async (email, userName, lastName, password) => {
             confirmButton: "swal2-confirm-custom",
           },
         });
+        if (error.response?.status === 401) {
+          localStorage.removeItem('token');
+          navigate('/login');
+      }
+  
+        
     }
 
 }

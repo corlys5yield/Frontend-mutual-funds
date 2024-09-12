@@ -1,0 +1,43 @@
+
+
+  .intro-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    /*background: linear-gradient(to right, #176B87, #64CCC5);*/
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .intro-container h1,
+  .intro-container p {
+    margin: 0;
+  }
+  
+  .char {
+    display: inline-block;
+    opacity: 0; /* Inicia con opacidad 0 para la animación */
+  }
+
+  /* archivo CSS personalizado */
+.accordion-item.custom-current .accordion-header {
+  background-color: #ffc107; /* Color de fondo personalizado */
+  color: #000; /* Color del texto personalizado */
+}
+
+.accordion-item.custom-finalized .accordion-header {
+  background-color: #28a745;
+  color: #fff;
+}
+
+/* Aplica también estilos al cuerpo si lo deseas */
+.accordion-item.custom-current .accordion-body {
+  background-color: #fff8e1;
+}
+
+.accordion-item.custom-finalized .accordion-body {
+  background-color: #e8f5e9;
+}
+
