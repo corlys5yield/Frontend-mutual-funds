@@ -61,11 +61,6 @@ const SecGoals = () => {
                       description: "Incrementa tu capital inicial a través de estrategias de inversión bien planificadas y ejecutadas en el mundo de las apuestas deportivas."
                     },
                     {
-                      icon: "bi-currency-exchange",
-                      title: "Diversificación de Inversiones",
-                      description: "Diversifica tu cartera de inversiones combinando apuestas deportivas con otros activos, reduciendo el riesgo y aumentando las oportunidades de ganancia."
-                    },
-                    {
                       icon: "bi-bar-chart-line",
                       title: "Generación de Ingresos Pasivos",
                       description: "Disfruta de ingresos adicionales sin esfuerzo diario, permitiendo que nuestras estrategias de inversión en apuestas deportivas trabajen para ti."
@@ -73,12 +68,12 @@ const SecGoals = () => {
                     {
                       icon: "bi-piggy-bank",
                       title: "Cumplimiento de Objetivos Financieros",
-                      description: "Logra tus metas financieras a corto, mediano y largo plazo, ya sea para educación, compra de una propiedad o retiro, a través de rendimientos consistentes."
+                      description: "Logra tus metas financieras a corto, mediano y largo plazo, a través de rendimientos consistentes."
                     },
                     {
                       icon: "bi-arrow-down-up",
                       title: "Protección contra la Inflación",
-                      description: "Protege tu dinero del impacto negativo de la inflación, obteniendo rendimientos superiores a la tasa de inflación promedio mediante inversiones estratégicas en apuestas deportivas."
+                      description: "Protege tu dinero del impacto negativo de la inflación, obteniendo rendimientos superiores a la tasa de inflación promedio mediante inversiones estratégicas en nuestras apuestas deportivas."
                     },
                     {
                       icon: "bi-file-earmark-bar-graph",

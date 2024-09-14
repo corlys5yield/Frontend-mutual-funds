@@ -88,16 +88,16 @@ export const HomeWelcome = () => {
         <SecPrecentation handleShowModal={handleShowModal} />
       </div>
 
-      <div id="AboutUs" ref={(el) => (sectionsRef.current[1] = el)} className="section text-white text-center py-5">
+      <div id="AboutUs" ref={(el) => (sectionsRef.current[1] = el)} className="section text-white text-center ">
 
-        <Container>
+        
           <SecAboutUs />
-        </Container>
+        
 
 
       </div>
 
-      <div id="goals" ref={(el) => (sectionsRef.current[2] = el)} className="section text-white text-center py-5">
+      <div id="goals" ref={(el) => (sectionsRef.current[2] = el)} className="section text-white text-center ">
         <SecGoals />
       </div>
       <div id="rendimiento" ref={(el) => (sectionsRef.current[3] = el)} className="section text-white text-center py-5">
@@ -108,14 +108,21 @@ export const HomeWelcome = () => {
 
 
       </div>
-      <div id="faq" ref={(el) => (sectionsRef.current[4] = el)} className="section text-white text-center py-5">
-        <Container>
+      <div id="faq" ref={(el) => (sectionsRef.current[4] = el)} className="section text-white text-center ">
+        
           <SecFaq />
-        </Container>
+        
       </div>
+      
+      {/*
+
       <div id="news" ref={(el) => (sectionsRef.current[5] = el)} className="section text-white text-center">
+        
         <SecNews />
       </div>
+        
+        */}
+      
       <Button
         className={`position-sticky fw-bold bottom-0 end-0 ${scrolling ? 'd-block' : 'd-none'}`}
         variant="warning"

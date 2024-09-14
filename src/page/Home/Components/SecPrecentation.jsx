@@ -105,7 +105,7 @@ export const SecPrecentation = ({ handleShowModal }) => {
               <div className="text-container text-start">
                 <h1 ref={addToRefs}>Invierte en Resultados Excepcionales</h1>
                 <p ref={addToRefs}>Garantizamos rendimientos constantes y crecimiento financiero.</p>
-                <Button ref={addToRefs} variant="outline-warning" className="mt-3 rounded-pill" onClick={handleShowModal}>Únete a nosotras</Button>
+                <Button ref={addToRefs} variant="outline-warning" className="mt-3 rounded-pill" onClick={handleShowModal}>Únete a nosotros</Button>
               </div>
             </Container>
           </div>
@@ -117,7 +117,7 @@ export const SecPrecentation = ({ handleShowModal }) => {
               <div className="text-container text-center">
                 <h1 ref={addToRefs}>Únete a Nuestra Comunidad de Éxito</h1>
                 <p ref={addToRefs}>La colaboración y el trabajo en equipo nos llevan más lejos.</p>
-                <Button ref={addToRefs} variant="outline-warning" className="mt-3 rounded-pill" onClick={handleShowModal}>Únete a nosotras</Button>
+                <Button ref={addToRefs} variant="outline-warning" className="mt-3 rounded-pill" onClick={handleShowModal}>Únete a nosotros</Button>
               </div>
             </Container>
           </div>
@@ -129,7 +129,7 @@ export const SecPrecentation = ({ handleShowModal }) => {
               <div className="text-container text-end">
                 <h1 ref={addToRefs}>Alcanza Tus Sueños con Nosotros</h1>
                 <p ref={addToRefs}>Transformamos tus metas financieras en realidad.</p>
-                <Button ref={addToRefs} variant="outline-warning" className="mt-3 rounded-pill" onClick={handleShowModal}>Únete a nosotras</Button>
+                <Button ref={addToRefs} variant="outline-warning" className="mt-3 rounded-pill" onClick={handleShowModal}>Únete a nosotros</Button>
               </div>
             </Container>
           </div>

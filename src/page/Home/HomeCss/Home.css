@@ -62,7 +62,7 @@
 }
 
 .custom-navbar-toggle .navbar-toggler-icon {
-  color: white; /* Cambia el color de las líneas del menú hamburguesa */
+  color: white; 
 }
 
 .navbar-toggler-icon {
@@ -171,7 +171,7 @@
 
 .sec-News {
   position: relative;
-  background: url('../../../assets/mon.jpg') no-repeat center center;
+  background: url('../../../assets/shad.jpg') no-repeat center center;
   background-size: cover;
   width: 100%;
   min-height: 100vh; /* Ocupa al menos la altura de la pantalla */
@@ -206,8 +206,97 @@
   border-color: #ffc107; /* borde del checkbox */
 }
 
+/* Estilos generales para las formas decorativas */
+.forpa {
+  position: absolute;
+  width: 600px; /* Tamaño base más grande */
+  height: 600px; /* Tamaño base más grande */
+  background-color: #d6dbdf;
+  border-radius: 50%;
+  transition: all 0.5s ease; /* Transición suave en el cambio de tamaño */
+  z-index: -1; /* Asegúrate de que las formas queden detrás del contenido */
+}
 
+.forpa1 {
+  top: -10px;  /* Mueve hacia arriba para que solo una parte se vea */
+  right: -300px; /* Mueve hacia la derecha para encajarla en la esquina */
+}
 
+.forpa2 {
+  bottom: -300px;  /* Mueve hacia abajo para que solo una parte se vea */
+  left: -300px; /* Mueve hacia la izquierda para encajarla en la esquina */
+}
+
+/* Estilos para pantallas más pequeñas (como móviles) */
+@media (max-width: 768px) {
+  .forpa {
+    width: 220px;  /* Tamaño más pequeño en móviles */
+    height: 220px;
+  }
+
+  .forpa1 {
+    top: -110px; /* Ajusta para mantenerlas parcialmente visibles en móviles */
+    right: -110px;
+  }
+
+  .forpa2 {
+    bottom: -110px;
+    left: -110px;
+  }
+}
+
+@media (max-width: 480px) {
+  .forpa {
+    width: 120px;   /* Tamaño aún más pequeño en pantallas muy pequeñas */
+    height: 120px;
+  }
+
+  .forpa1 {
+    top: -60px; /* Ajusta aún más para pantallas más pequeñas */
+    right: -60px;
+  }
+
+  .forpa2 {
+    bottom: -60px;
+    left: -60px;
+  }
+}
+
+/* Otros estilos */
+.custom-container2 {
+  position: relative;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.welcome-text {
+  font-size: 2rem;
+}
+
+/*para el grafico*/
+/* En tu archivo CSS (Home.css) */
+@media (max-width: 768px) {
+  .responsive-chart {
+    height: 200px; /* Ajusta la altura en pantallas más pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  .responsive-chart {
+    height: 150px; /* Reduce aún más para dispositivos más pequeños */
+  }
+}
+
+/* Ajustar el padding del Accordion en pantallas pequeñas */
+@media (max-width: 768px) {
+  .fund-accordion .accordion-body {
+    padding: 10px;
+  }
+}
 
 
 

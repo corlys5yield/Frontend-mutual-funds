@@ -81,7 +81,9 @@ export const SecFaq = () => {
   }, []);
 
   return (
-    <Container className="mt-5 text-dark">
+    <div className='sec-News d-flex justify-content-center align-items-center'>
+      <div className="overlay"></div>
+      <Container className="mt-5 text-container text-start">
     <Card className="p-4 shadow-lg">
       <h2 className="text-center text-shadow">Conoce mas de 5yield</h2>
       <p className="text-center ">Conoce lo que hacemos y encuentra respuestas a preguntas frecuentes.</p>
@@ -99,6 +101,8 @@ export const SecFaq = () => {
       </Row>
     </Card>
   </Container>
+    </div>
+    
   );
 };
 

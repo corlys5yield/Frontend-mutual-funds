@@ -11,7 +11,6 @@ import { LoadPercentage } from '../Helpers/LoadPercentage';
 
 gsap.registerPlugin(ScrollTrigger);
 
-
 export const SecRendimiento = () => {
   const [activeKey, setActiveKey] = useState(null);
   const accordionRefs = useRef([]);
@@ -19,10 +18,25 @@ export const SecRendimiento = () => {
   const textRef = useRef(null);
 
   const [percentage, setPercentage] = useState([]);
+  const [isSmallScreen, setIsSmallScreen] = useState(false); // Estado para el tamaño de pantalla
 
   const handleSelect = (eventKey) => {
     setActiveKey(activeKey === eventKey ? null : eventKey);
   };
+
+  // Detectar tamaño de pantalla
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 768); // Cambiar a 'true' si es pantalla pequeña
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Ejecutar al montar el componente para detectar el tamaño inicial
+    handleResize();
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     accordionRefs.current.forEach((ref, index) => {
@@ -97,14 +111,10 @@ export const SecRendimiento = () => {
     LoadPercentage(setPercentage)
   }, []);
 
-
-
-
   const chartData = percentage.map((item) => ({
-    name: new Date(item.endPeriod,).toLocaleDateString(), // Usar la propiedad enddate en lugar de Periodo
+    name: new Date(item.endPeriod).toLocaleDateString(), // Usar la propiedad enddate en lugar de Periodo
     percentage: item.percentage, // Asegúrate de que esta propiedad existe en tu objeto
   }));
-
 
   return (
     <Container>
@@ -134,30 +144,27 @@ export const SecRendimiento = () => {
                   </div>
                 </Accordion.Header>
                 <Accordion.Body>
-
                   <ResponsiveContainer width="100%" height={300}>
                     <LineChart data={chartData}>
                       <CartesianGrid strokeDasharray="3 3" />
                       <XAxis dataKey="name" />
                       <YAxis />
-
-                      {/* Tooltip personalizado */}
                       <Tooltip
                         formatter={(value) => `${value}%`}
-                        labelFormatter={(label) => `Periodo: ${label}`}
+                        labelFormatter={(label) => 
+                          isSmallScreen ? label : `Periodo: ${label}`
+                        } // Cambiar el formato según el tamaño
                       />
-
-                      <Legend />
+                      <Legend name={isSmallScreen ? "Ganancias" : "Porcentaje de ganancias o rendimiento"} />
                       <Line
                         type="monotone"
                         dataKey="percentage"
                         stroke="#1E90FF"
                         activeDot={{ r: 9 }}
-                        name="Porcentaje de ganancias o rendimiento"
+                        name={isSmallScreen ? "Ganancias" : "Porcentaje de ganancias o rendimiento"} // Cambiar nombre según pantalla
                       />
                     </LineChart>
                   </ResponsiveContainer>
-
                 </Accordion.Body>
               </Accordion.Item>
             </Accordion>
@@ -169,6 +176,7 @@ export const SecRendimiento = () => {
 };
 
 export default SecRendimiento;
+
 
 
 
