@@ -41,12 +41,12 @@ const Footer = () => {
           <Col md={4} className="text-center">
             <h5>Contacto de Soporte</h5>
             <p>Para cualquier consulta o problema no dudes en contactarnos:</p>
-            <a href="mailto:soporte@5yield.com" className="text-secondary">soporte@5yield.com</a>
+            <a href="mailto:Corlys@5yield.com" className="text-secondary">Corlys@5yield</a>
             <ul className="list-unstyled mt-2">
-              <li><a href="mailto:soporte@5yield.com?subject=Olvido%20de%20Contraseña" className="text-secondary"> • Olvido de Contraseña</a></li>
-              <li><a href="mailto:soporte@5yield.com?subject=Problema%20con%20Solicitud%20de%20Depósito" className="text-secondary">• Problemas con Solicitudes de Depósito</a></li>
-              <li><a href="mailto:soporte@5yield.com?subject=Problema%20con%20Solicitud%20de%20Retiro" className="text-secondary">• Problemas con Solicitudes de Retiro</a></li>
-              <li><a href="mailto:soporte@5yield.com?subject=Problema%20con%20la%20Plataforma" className="text-secondary">• Problemas con la Plataforma</a></li>
+              <li><a href="mailto:Corlys@5yield.com?subject=Olvido%20de%20Contraseña" className="text-secondary"> • Olvido de Contraseña</a></li>
+              <li><a href="mailto:Corlys@5yield.com?subject=Problema%20con%20Solicitud%20de%20Depósito" className="text-secondary">• Problemas con Solicitudes de Depósito</a></li>
+              <li><a href="mailto:Corlys@5yield.com?subject=Problema%20con%20Solicitud%20de%20Retiro" className="text-secondary">• Problemas con Solicitudes de Retiro</a></li>
+              <li><a href="mailto:Corlys@5yield.com?subject=Problema%20con%20la%20Plataforma" className="text-secondary">• Problemas con la Plataforma</a></li>
             </ul>
           </Col>
         </Row>

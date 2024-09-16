@@ -98,10 +98,10 @@ export const ModalJoin = ({ show, handleClose, handleSubmit }) => {
               <br />
               <li>
                 <strong className='text-shadow text-warning'>Realización de la Inversión:</strong><br />
-                Deberás realizar la transferencia de USDT al alias o ID que te proporcionaremos a continuación:
+                Deberás realizar la transferencia de USDT al ID de binance que te proporcionaremos a continuación:
 
                 <div className='text-shadow text-warning'>
-                  [ID-AliasBinance].<br />
+                  [198543146].<br />
                 </div>
 
 

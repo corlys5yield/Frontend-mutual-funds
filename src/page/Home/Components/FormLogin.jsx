@@ -72,10 +72,10 @@ export const FormLogin = () => {
                 <p className="text-white">
                   Si olvidaste tu contraseña, comunícate con soporte al correo{" "}
                   <a
-                    href="mailto:soporte@tuempresa.com?subject=Olvidé%20la%20contraseña"
+                    href="mailto:Corlys@5yield.com?subject=Olvidé%20la%20contraseña"
                     className="text-warning"
                   >
-                    soporte@5yield.com
+                    Corlys@5yield
                   </a>{" "}
                   con el asunto <strong>• Olvidé la contraseña</strong>.
                 </p>

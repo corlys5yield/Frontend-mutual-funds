@@ -38,7 +38,10 @@ const MainNavbar = ({ handleShowModal }) => {
           <Button className="m-2 rounded-pill" variant="outline-light" onClick={() => scrollToSection('goals')}>Objetivos</Button>
           <Button className="m-2 rounded-pill" variant="outline-light" onClick={() => scrollToSection('rendimiento')}>Rendimientos anteriores</Button>
           <Button className="m-2 rounded-pill" variant="outline-light" onClick={() => scrollToSection('faq')}>FAQ</Button>
+          {/*
           <Button className="m-2 rounded-pill" variant="outline-light" onClick={() => scrollToSection('news')}>Novedades</Button>
+          */}
+          
         </div>
         
         {/* Dropdown visible solo en pantallas pequeñas */}
@@ -50,7 +53,10 @@ const MainNavbar = ({ handleShowModal }) => {
               <NavDropdown.Item onClick={() => scrollToSection('goals')}>Objetivos</NavDropdown.Item>
               <NavDropdown.Item onClick={() => scrollToSection('rendimiento')}>Rendimientos anteriores</NavDropdown.Item>
               <NavDropdown.Item onClick={() => scrollToSection('faq')}>FAQ</NavDropdown.Item>
-              <NavDropdown.Item onClick={() => scrollToSection('news')}>Novedades</NavDropdown.Item>
+              {/*
+               <NavDropdown.Item onClick={() => scrollToSection('news')}>Novedades</NavDropdown.Item>
+              */}
+             
             </Dropdown.Menu>
           </Dropdown>
         </div>
